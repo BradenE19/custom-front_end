@@ -65,11 +65,22 @@ body {
 .container {
   display: grid;
   place-items: center;
+  width: 500px;
+  height: 500px;
 }
 
 .swiper {
-  width: 600px;
-  height: 300px;
+  width: 900px;
+  height: 900px;
+  place-items: center;
 }
 
-.image-wrapper
+ .swiper-slide {
+  width: 200px;
+  height: 100px;
+}
+
+.image-wrapper {
+  width: 500px;
+  height: 500px;
+}
