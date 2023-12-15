@@ -1,16 +1,10 @@
 {
 	"works": [
 		{
-			"title": "work",
-			"artist": "Da vinki?",
-			"desc": "description",
-			"img": "firebase storage place URL"
-		},
-		{
-			"title": "work1",
-			"artist": "Da vinki!",
-			"desc": "description",
-			"img": "firebase storage place URL"
+			"title": "John of the juice",
+			"artist": "John",
+			"desc": "John of the juice",
+			"img": "safjnadskjfsakjdfsjk"
 		}
 	]
 }

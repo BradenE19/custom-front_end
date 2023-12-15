@@ -60,19 +60,19 @@ body {
   height: 500px;
 } */
 
-.swiper {
+/* .swiper {
   height: 528px;
   place-items: center;
-}
+} */
 
- .swiper-slide {
+ /* .swiper-slide {
   width: 200px;
-}
+} */
 
-.image-wrapper {
+/* .image-wrapper {
   width: 500px;
   height: fit-content;
-}
+} */
 
 .home__swiper-button-next, .home__swiper-button-prev {
   position: absolute;

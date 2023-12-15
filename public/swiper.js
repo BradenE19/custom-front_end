@@ -1,7 +1,13 @@
 $( function () {
   const swiper = new Swiper(".swiper", {
-    // Optional parameters
-    direction: "horizontal",
+    // direction: "horizontal",
+    effect: "coverflow",
+    centeredSlides: true,
+    slidesPerView: 2,
+    coverflowEffect: {
+      rotate: 40,
+      slideShadows: true,
+    },
     loop: true,
     // If we need pagination
     pagination: {
@@ -13,7 +19,6 @@ $( function () {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-  
     // And if we need scrollbar
     scrollbar: {
       el: ".swiper-scrollbar",
