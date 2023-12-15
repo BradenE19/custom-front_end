@@ -30,15 +30,6 @@
   
 /* -- Hero section -- */
 
-
-.header {
-  background-image: url("images/museum-of-the-imagination-black.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  padding: 11rem;
-}
-
 html, body {
   width: 100%;
   height:100%;
