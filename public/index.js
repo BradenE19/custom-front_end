@@ -2,7 +2,7 @@ $(function () {
   const db = firebase.firestore();
   const storage = firebase.storage();
 
-  async function getFirestoreWorks() {
+  function getFirestoreWorks() {
     const works = [];
     db.collection("works")
       .get()
@@ -11,31 +11,30 @@ $(function () {
           works.push(doc.data());
         });
         works.forEach((work) => {
-          console.log(getImageFromStorage(work.img));
+          getImageFromStorageAndAddToCarousel(work);
+          console.log(work);
         })
+        applySwiper();
       });
     return works;
   }
 
-  function createSwiperImage(work) {
+  function createSwiperImage(work, imageURL) {
     return $('<div class="swiper-slide">').append(
       $('<div class="image-wrapper">').append(
         $(
           '<img class="img-fluid" alt="Responsive image" width="512" height="512">'
-        ).attr("src", work.img)
+        ).attr("src", imageURL)
       )
     );
   }
 
-  async function getImageFromStorage(storagePath) {
+  function getImageFromStorageAndAddToCarousel(work) {
     const storageRef = storage.ref();
-    let imageURL = "";
-    storageRef.child(storagePath).getDownloadURL()
+    storageRef.child(work.img).getDownloadURL()
     .then((url) => {
-      imageURL = url;
-      console.log(imageURL);
+      $(".swiper-wrapper").append(createSwiperImage(work, url));
     })
-    return imageURL;
   }
 
   function applySwiper(className) {
@@ -66,21 +65,9 @@ $(function () {
     console.log(swiper);
   }
 
-  async function main() {
-    const works = await getFirestoreWorks();
-    // const workElements = works.map(createSwiperImage);
-    const worksCopy = [...works]
-
-    console.log(typeof works, works, worksCopy);
-
-    // getImageFromStorage(works.img)
-    //   .then((url) => {
-    //     console.log(url);
-    //   });
-
+  function main() {
+    const works = getFirestoreWorks();
   }
   main();
 
-  // $(".swiper-wrapper").append(workElements);
-  applySwiper();
 });
