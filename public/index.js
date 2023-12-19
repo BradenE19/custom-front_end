@@ -1,9 +1,9 @@
 $(function () {
   const db = firebase.firestore();
   const storage = firebase.storage();
+  const works = [];
 
   function getFirestoreWorks() {
-    const works = [];
     db.collection("works")
       .get()
       .then((querySnapshot) => {
@@ -19,7 +19,10 @@ $(function () {
           console.log(work);
         })
       })
-      .then( () => applySwiper());
+      .then( () => {
+        applySwiper()
+        console.log(works);
+      });
     return works;
   }
 
@@ -33,13 +36,19 @@ $(function () {
     );
   }
 
+  function displayWorkInfo(work) {
+    $("#carouselInfo__title").text(work.title);
+    $("#carouselInfo__author").text(work.artist);
+    $("#carouselInfo__para").text(work.desc);
+  }
+
   function applySwiper() {
     const tryDisplay = (swiper) => { setTimeout(() => {
       const slide = swiper.slides[swiper.activeIndex];
       if (typeof slide === 'undefined') {
         tryDisplay(swiper);
       }
-      console.log(slide);
+      displayWorkInfo(works[swiper.activeIndex]);
     }, 200)};
     const swiper = new Swiper(".swiper", {
       // direction: "horizontal",
@@ -67,7 +76,9 @@ $(function () {
       },
       on: {
         slideChange: function () {
-          console.log(this.slides[this.activeIndex]);
+          const slideIndex = this.activeIndex;
+          const work = works[slideIndex];
+          displayWorkInfo(work);
         },
         init: function () {
           tryDisplay(this);
