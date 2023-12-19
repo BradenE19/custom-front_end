@@ -34,11 +34,19 @@ $(function () {
   }
 
   function applySwiper() {
+    const tryDisplay = (swiper) => { setTimeout(() => {
+      const slide = swiper.slides[swiper.activeIndex];
+      if (typeof slide === 'undefined') {
+        tryDisplay(swiper);
+      }
+      console.log(slide);
+    }, 200)};
     const swiper = new Swiper(".swiper", {
       // direction: "horizontal",
       effect: "coverflow",
       centeredSlides: true,
       slidesPerView: 2,
+      init: false,
       coverflowEffect: {
         rotate: 40,
         slideShadows: true,
@@ -57,7 +65,16 @@ $(function () {
       scrollbar: {
         el: ".swiper-scrollbar",
       },
+      on: {
+        slideChange: function () {
+          console.log(this.slides[this.activeIndex]);
+        },
+        init: function () {
+          tryDisplay(this);
+        }
+      }
     });
+    swiper.init();
     console.log(swiper);
   }
 
