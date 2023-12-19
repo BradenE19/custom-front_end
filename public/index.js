@@ -16,12 +16,10 @@ $(function () {
           .then((url) => {
             $(".swiper-wrapper").append(createSwiperImage(work, url));
           })
-          console.log(work);
         })
       })
       .then( () => {
         applySwiper()
-        console.log(works);
       });
     return works;
   }
@@ -86,7 +84,6 @@ $(function () {
       }
     });
     swiper.init();
-    console.log(swiper);
   }
 
   function main() {
