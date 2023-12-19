@@ -10,12 +10,16 @@ $(function () {
         querySnapshot.forEach((doc) => {
           works.push(doc.data());
         });
+        const storageRef = storage.ref();
         works.forEach((work) => {
-          getImageFromStorageAndAddToCarousel(work);
+          storageRef.child(work.img).getDownloadURL()
+          .then((url) => {
+            $(".swiper-wrapper").append(createSwiperImage(work, url));
+          })
           console.log(work);
         })
-        applySwiper();
-      });
+      })
+      .then( () => applySwiper());
     return works;
   }
 
@@ -29,15 +33,7 @@ $(function () {
     );
   }
 
-  function getImageFromStorageAndAddToCarousel(work) {
-    const storageRef = storage.ref();
-    storageRef.child(work.img).getDownloadURL()
-    .then((url) => {
-      $(".swiper-wrapper").append(createSwiperImage(work, url));
-    })
-  }
-
-  function applySwiper(className) {
+  function applySwiper() {
     const swiper = new Swiper(".swiper", {
       // direction: "horizontal",
       effect: "coverflow",
@@ -47,7 +43,7 @@ $(function () {
         rotate: 40,
         slideShadows: true,
       },
-      loop: true,
+      // loop: true,
       // If we need pagination
       pagination: {
         el: ".swiper-pagination",
