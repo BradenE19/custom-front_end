@@ -12,14 +12,16 @@ $(function () {
         });
         const storageRef = storage.ref();
         works.forEach((work) => {
-          storageRef.child(work.img).getDownloadURL()
-          .then((url) => {
-            $(".swiper-wrapper").append(createSwiperImage(work, url));
-          })
-        })
+          storageRef
+            .child(work.img)
+            .getDownloadURL()
+            .then((url) => {
+              $(".swiper-wrapper").append(createSwiperImage(work, url));
+            });
+        });
       })
-      .then( () => {
-        applySwiper()
+      .then(() => {
+        applySwiper();
       });
     return works;
   }
@@ -27,9 +29,10 @@ $(function () {
   function createSwiperImage(work, imageURL) {
     return $('<div class="swiper-slide">').append(
       $('<div class="image-wrapper">').append(
-        $(
-          '<img class="img-fluid" alt="Responsive image">'
-        ).attr("src", imageURL)
+        $('<img class="img-fluid" alt="Responsive image">').attr(
+          "src",
+          imageURL
+        )
       )
     );
   }
@@ -41,14 +44,16 @@ $(function () {
   }
 
   function applySwiper() {
-    const tryDisplay = (swiper) => { setTimeout(() => {
-      const slide = swiper.slides[swiper.activeIndex];
-      if (typeof slide === 'undefined') {
-        tryDisplay(swiper);
-        return;
-      }
-      displayWorkInfo(works[swiper.activeIndex]);
-    }, 200)};
+    const tryDisplay = (swiper) => {
+      setTimeout(() => {
+        const slide = swiper.slides[swiper.activeIndex];
+        if (typeof slide === "undefined") {
+          tryDisplay(swiper);
+          return;
+        }
+        displayWorkInfo(works[swiper.activeIndex]);
+      }, 200);
+    };
     const swiper = new Swiper(".swiper", {
       // direction: "horizontal",
       effect: "coverflow",
@@ -81,8 +86,8 @@ $(function () {
         },
         init: function () {
           tryDisplay(this);
-        }
-      }
+        },
+      },
     });
     swiper.init();
   }
@@ -91,5 +96,4 @@ $(function () {
     const works = getFirestoreWorks();
   }
   main();
-
 });
