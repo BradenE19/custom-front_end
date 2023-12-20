@@ -73,21 +73,3 @@ body {
   width: 500px;
   height: fit-content;
 } */
-
-/* .home__swiper-button-next, .home__swiper-button-prev {
-  position: absolute;
-  top: var(--swiper-navigation-top-offset, 1211px);
-  width: calc(var(--swiper-navigation-size)/ 44 * 27);
-  height: var(--swiper-navigation-size);
-  margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
-  z-index: 10;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--swiper-navigation-color,var(--swiper-theme-color));
-} */
-
-/* .swiper-wrapper .home__swiper-pagination {
-  bottom: 10px;
-} */
