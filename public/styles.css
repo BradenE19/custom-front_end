@@ -74,9 +74,9 @@ body {
   height: fit-content;
 } */
 
-.home__swiper-button-next, .home__swiper-button-prev {
+/* .home__swiper-button-next, .home__swiper-button-prev {
   position: absolute;
-  top: var(--swiper-navigation-top-offset, 1082px);
+  top: var(--swiper-navigation-top-offset, 1211px);
   width: calc(var(--swiper-navigation-size)/ 44 * 27);
   height: var(--swiper-navigation-size);
   margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
@@ -86,8 +86,8 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--swiper-navigation-color,var(--swiper-theme-color));
-}
+} */
 
-.swiper-horizontal .home__swiper-pagination {
+/* .swiper-wrapper .home__swiper-pagination {
   bottom: 10px;
-}
+} */

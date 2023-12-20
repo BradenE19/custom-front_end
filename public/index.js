@@ -28,7 +28,7 @@ $(function () {
     return $('<div class="swiper-slide">').append(
       $('<div class="image-wrapper">').append(
         $(
-          '<img class="img-fluid" alt="Responsive image" width="512" height="512">'
+          '<img class="img-fluid" alt="Responsive image">'
         ).attr("src", imageURL)
       )
     );
