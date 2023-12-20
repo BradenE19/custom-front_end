@@ -76,7 +76,7 @@ body {
 
 .home__swiper-button-next, .home__swiper-button-prev {
   position: absolute;
-  top: var(--swiper-navigation-top-offset, 380px);
+  top: var(--swiper-navigation-top-offset, 1082px);
   width: calc(var(--swiper-navigation-size)/ 44 * 27);
   height: var(--swiper-navigation-size);
   margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));

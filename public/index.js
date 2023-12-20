@@ -45,6 +45,7 @@ $(function () {
       const slide = swiper.slides[swiper.activeIndex];
       if (typeof slide === 'undefined') {
         tryDisplay(swiper);
+        return;
       }
       displayWorkInfo(works[swiper.activeIndex]);
     }, 200)};
