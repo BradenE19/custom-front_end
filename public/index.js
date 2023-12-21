@@ -103,9 +103,5 @@ $(function () {
     });
     swiper.init();
   }
-
-  function main() {
-    const works = getFirestoreWorks();
-  }
-  main();
+  getFirestoreWorks();
 });
