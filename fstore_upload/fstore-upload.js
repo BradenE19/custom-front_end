@@ -1,11 +1,18 @@
 const admin = require("firebase-admin");
 const fs = require("fs");
+const serviceAccount = require("./museum-of-imagination-firebase-admin-key.json");
 
 // Initialize the app to point to the Firestore emulator
 // Assuming the Firestore emulator is running on the default port
-process.env.FIRESTORE_EMULATOR_HOST = "localhost:8080";
+// process.env.FIRESTORE_EMULATOR_HOST = "localhost:8080";
+// admin.initializeApp({
+//   projectId: "museum-of-imagination",
+// });
+
+
+// Initialize the app to point to the Firestore server
 admin.initializeApp({
-  projectId: "museum-of-imagination",
+    credential: admin.credential.cert(serviceAccount),
 });
 
 const db = admin.firestore();
