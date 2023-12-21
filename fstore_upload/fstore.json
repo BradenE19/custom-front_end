@@ -1,52 +1,28 @@
 {
 	"works": [
 		{
-			"title": "John of the juice",
-			"artist": "John",
-			"desc": "John of the juice",
+			"title": "Hairway to Steaven",
+			"artist": "Evan Steavens",
+			"desc": "The Hairway to Steaven is a Hairway that goes to Steaven. Don't ask.",
+			"img": "img/hairway-to-steaven.png"
+		},
+		{
+			"title": "John of the juices",
+			"artist": "John Juice",
+			"desc": "John of the juices is John Juice's Juice Bar. John Juice started juicing in his jearly 20s jand jas jen juicing jever jince. He has the juice bar in his house and is a very good person. He is a very good person. He is a very good person. He is a very good person. He is a very good person. He is a very good person. He is a very good person. He is a very good person. He is a very.",
 			"img": "img/john_of_the_juices.png"
 		},
 		{
-			"title": "John of the juice",
-			"artist": "John",
-			"desc": "John of the juice 123",
-			"img": "img/john_of_the_juices.png"
+			"title": "the rat",
+			"artist": "the rat",
+			"desc": "the rat",
+			"img": "img/the-rat.png"
 		},
 		{
-			"title": "John of the juice",
-			"artist": "John",
-			"desc": "John of the juice asdasd",
-			"img": "img/john_of_the_juices.png"
-		},
-		{
-			"title": "John of the juice",
-			"artist": "John juicy",
-			"desc": "John of the juice",
-			"img": "img/john_of_the_juices.png"
-		},
-		{
-			"title": "John of the juice",
-			"artist": "John",
-			"desc": "John of the juice",
-			"img": "img/john_of_the_juices.png"
-		},
-		{
-			"title": "John of the juice",
-			"artist": "John",
-			"desc": "John of the juice",
-			"img": "img/john_of_the_juices.png"
-		},
-		{
-			"title": "John of the juice",
-			"artist": "John",
-			"desc": "John of the juice",
-			"img": "img/john_of_the_juices.png"
-		},
-		{
-			"title": "John of the juice",
-			"artist": "John",
-			"desc": "John of the juice",
-			"img": "img/john_of_the_juices.png"
+			"title": "Lebal Departmant",
+			"artist": "mokey",
+			"desc": "bananana banabanab dddaas abannbbnab aooaoaoaoaoOAOAOAOAOAOAOAOafasjasjassafijsaifjoasfasfaafeief. - Lebal",
+			"img": "img/legal_dept.png"
 		}
 	]
 }

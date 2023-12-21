@@ -32,7 +32,7 @@ $(function () {
         $('<img class="img-fluid" alt="Responsive image">').attr(
           "src",
           imageURL
-        )
+        ).data("fstorageURI", work.img)
       )
     );
   }
@@ -43,6 +43,14 @@ $(function () {
     $("#carouselInfo__para").text(work.desc);
   }
 
+
+  // Note: Avoid doing this in the future.
+  function determineCorrectWork(slide) {
+    const data = slide.children().first().children().first().data();
+    const work = works.filter((work) => work.img === data.fstorageURI)[0];
+    return work;
+  }
+
   function applySwiper() {
     const tryDisplay = (swiper) => {
       setTimeout(() => {
@@ -51,7 +59,9 @@ $(function () {
           tryDisplay(swiper);
           return;
         }
-        displayWorkInfo(works[swiper.activeIndex]);
+        const currentSlide = $(swiper.slides[swiper.activeIndex]);
+        const work = determineCorrectWork(currentSlide);
+        displayWorkInfo(work);
       }, 200);
     };
     const swiper = new Swiper(".swiper", {
@@ -81,7 +91,9 @@ $(function () {
       on: {
         slideChange: function () {
           const slideIndex = this.activeIndex;
-          const work = works[slideIndex];
+          const slide = $(this.slides[slideIndex]);
+          const work = determineCorrectWork(slide);
+          // console.log(slide, data, work);
           displayWorkInfo(work);
         },
         init: function () {
